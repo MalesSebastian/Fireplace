@@ -1,0 +1,73 @@
+body {
+	background: #0f233b;
+}
+
+* {
+	-webkit-transition: color 0.5s, background 0.5s, border 0.5s;
+    transition: color 0.5s, background 0.5s, border 0.5s;
+  	-webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+input, textarea, .create_acount {
+	margin-left: 35%;
+}
+
+.inputText input {
+	height: 40px;
+}
+
+.inputText input, .inputText textarea {
+	width: 27%;
+	background: #06141e;
+	border: 3px solid #505861;
+	color: #505861;
+}
+
+.send input {
+	width: 27%;
+	height: 40px;
+	background: #0889c4;
+	border: 3px solid #0889c4;
+	color: #fff;
+	text-align: center;
+	cursor: pointer;
+}
+
+.send input:hover {
+	background: #18a8eb;
+	border: 3px solid #18a8eb;
+	color: #fff;
+}
+
+.createAcount input {
+	width: 27%;
+	height: 40px;
+	background: #0b1c2a;
+	border: 3px solid #2f3c4c;
+	color: #fff;
+	text-align: center;
+	cursor: pointer;
+}
+
+.createAcount input:hover {;
+	border: 3px solid #535d67;
+	color: #00aeff;
+}
+
+::-webkit-input-placeholder {
+    color: #505861;
+}
+:-moz-placeholder {
+   	color: #505861;
+   	opacity: 1;
+}
+::-moz-placeholder {
+  	color: #505861;
+   	opacity: 1;
+}
+:-ms-input-placeholder {
+   	color: #505861;
+}

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		{% load staticfiles %}
+		<title>Acasa</title>
+		<link rel="stylesheet" type="text/css" href={% static 'authen/style.css' %} />
+		<script type="text/javascript" src="js/script.js"></script>
+	</head>
+	<body>
+		<form method="post" action="">
+
+			<div class="inputText">
+				<input type="text" name="username" placeholder="Username" required />
+				<br><br>
+				<input type="password" name="password" placeholder="Password" required />
+				<br><br>
+			</div>
+
+			<div class="send">
+				<input type="submit" name="login" value="Log In" class="login" />
+			</div>
+
+		</form>
+
+		<br>
+
+		<a href="register.html">
+			<div class="createAcount">
+				<input type="submit" name="createAcount" value="Create Acount" class="createAcount" />
+			</div>
+		</a>
+	</body>
+</html>
