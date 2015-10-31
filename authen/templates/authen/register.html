@@ -37,8 +37,9 @@
 	</head>
 	<body>
 		<form method="post" action="">
-		{% csrf_token %} 
-			<div class="inputText">
+		{% csrf_token %}
+		{{form.as_ul}}
+		<!--	<div class="inputText">
 				<input type="text" name="username" placeholder="Username" required />
 				<br><br>
 				<input type="email" name="email" placeholder="Email" required />
@@ -49,7 +50,7 @@
 				<br><br>
 				<span id="confirmMessage" class="confirmMessage"></span>
 			</div>
-
+		-->
 			<div class="send">
 				<input type="submit" name="register" value="Register" class="register" />
 			</div>
