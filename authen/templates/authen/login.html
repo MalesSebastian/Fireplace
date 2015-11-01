@@ -7,15 +7,17 @@
 		<script type="text/javascript" src="js/script.js"></script>
 	</head>
 	<body>
-		<form method="post" action="">
-
+		<form method="post" action="/registered">
+			{% csrf_token %}
+			{{form.as_ul}}
+				<!--
 			<div class="inputText">
 				<input type="text" name="username" placeholder="Username" required />
 				<br><br>
 				<input type="password" name="password" placeholder="Password" required />
 				<br><br>
 			</div>
-
+-->
 			<div class="send">
 				<input type="submit" name="login" value="Log In" class="login" />
 			</div>

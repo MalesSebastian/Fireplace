@@ -1,16 +1,16 @@
-from django.contrib.auth.forms import UserCreationForm
 from django.shortcuts import render
-from django.template import loader, RequestContext
-from django.http import HttpResponseRedirect
 from django.contrib.auth.models import User
 from forms import UserForm
 from django.contrib.auth import login
 from django.http import HttpResponseRedirect
-
+from django.http import HttpResponse
+from django.contrib.auth import authenticate
+from django.template import loader
 
 def login(request):
     template = loader.get_template('authen/login.html')
-    #return HttpResponse(template.render())
+    return HttpResponse(template.render())
+
 
 def register(request):
      if request.method == "POST":
@@ -24,3 +24,4 @@ def register(request):
         form = UserForm()
 
      return render(request, 'authen/register.html', {'form': form})
+
