@@ -6,8 +6,12 @@ class UserForm(forms.ModelForm):
     class Meta:
         model = User
         fields = ('username', 'email', 'password')
-        widgets = {
-            'username': forms.TextInput(attrs={'class': 'testcss'}),
-            'email': forms.TextInput(attrs={'class': 'create_acount'}),
-            'password': forms.TextInput(attrs={'class': 'create_acount'})
-        }
+        #widgets = {
+            #'username': forms.TextInput(attrs={'class': 'inputText'}),
+           # 'email': forms.TextInput(attrs={'class': 'inputText'}),
+            #'password': forms.TextInput(attrs={'class': 'inputText'}),
+
+#class Userlogin(forms.ModelForm):
+    #class Meta:
+     #   model = User
+     #   fields = ('username', 'password')
