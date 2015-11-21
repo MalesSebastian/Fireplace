@@ -6,27 +6,24 @@ from django.http import HttpResponseRedirect
 from django.http import HttpResponse
 from django.contrib.auth import authenticate
 from django.template import loader
-from django.utils.datastructures import MultiValueDictKeyError
 
-def login(request):
-    try:
-        username = request.POST.get['username']
-    except:
-        username = False
-    try:
-        password = request.POST.get['password']
-    except:
-        password = False
-    user = authenticate(username=username, password=password)
-    if user is not None:
-        if user.is_active:
-            login(request, user)
-            return HttpResponseRedirect('/index2')
+def app_login(request):
+    if request.method == 'GET':
+        return render(request, "authen/login.html")
+    elif request.method == 'POST':
+        username = request.POST.get('username')
+        password = request.POST.get('password')
+        user = authenticate(username=username, password=password)
+        if user is not None:
+            if user.is_active:
+                login(request, user)
+                return HttpResponseRedirect('/index2')
+            else:
+                print "Disabled account"
         else:
-            print "Disabled account"
-    else:
-        print "Invalid data"
+            print "Invalid data"
     return render(request, 'authen/login.html')
+
 def index2(request):
     template = loader.get_template('authen/index.html')
     return  HttpResponse(template.render())
@@ -34,6 +31,7 @@ def index2(request):
 def index(request):
     template = loader.get_template('authen/index.html')
     return  HttpResponse(template.render())
+
 def register(request):
      if request.method == "POST":
         form = UserForm(request.POST)

@@ -11,7 +11,7 @@ class UserForm(forms.ModelForm):
            # 'email': forms.TextInput(attrs={'class': 'inputText'}),
             #'password': forms.TextInput(attrs={'class': 'inputText'}),
 
-#class Userlogin(forms.ModelForm):
-    #class Meta:
-     #   model = User
-     #   fields = ('username', 'password')
+# class Userlogin(forms.ModelForm):
+#     class Meta:
+#         model = User
+#         fields = ('username', 'password')
