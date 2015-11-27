@@ -39,6 +39,7 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'authen',
     'new_post',
+    'home',
 )
 
 MIDDLEWARE_CLASSES = (
