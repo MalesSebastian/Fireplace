@@ -17,7 +17,7 @@ def app_login(request):
         if user is not None:
             if user.is_active:
                 login(request, user)
-                return HttpResponseRedirect('/index2')
+                return HttpResponseRedirect('/submit')
             else:
                 print "Disabled account"
         else:
