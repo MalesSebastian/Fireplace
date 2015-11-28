@@ -6,13 +6,15 @@ class Post(models.Model):
     post_text = models.TextField()
     time = timezone.now()
     up_vote = models.IntegerField(default= 0)
-   # category = models.TextField()
-    #submitter = models.TextField(default="")
+    category = models.TextField(default='')
+    submitter = models.TextField(default='')
 
-    def __init__(self, title, post_text):
+    def __init__(self, title, post_text, user, category):
         self.title = title
         self.post_text = post_text
         self.time = timezone.now()
+        self.submitter = user
+        self.category = category
 
     def set_title(self, title):
         self.title = title
@@ -32,5 +34,13 @@ class Post(models.Model):
     def get_text(self):
         return self.post_text
 
+    def get_user(self):
+        return self.submitter
+
+    def get_category(self):
+        return self.category
+
+    def get_time(self):
+        return self.time
 # unfinished work
 
