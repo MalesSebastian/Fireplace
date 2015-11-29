@@ -1,9 +1,7 @@
-from django.shortcuts import render
 from django.shortcuts import render_to_response
 from models import Post
-from django.contrib.sessions.models import Session
-from django.contrib.auth.models import User
-from django.db import models
+import pytz
+from django.utils import timezone
 
 def submit(request):
     if request.method == "GET":
@@ -11,5 +9,11 @@ def submit(request):
         post_text = request.GET.get('post_text')
         category = request.GET.get('category')
         user_ses = request.user
-        new_post = Post(post_title, post_text, user_ses,category)
+        if post_title is not None:
+            new_post = Post(post_title, post_text, user_ses,category)
+            print new_post.get_title() , '\n'
+            print new_post.get_text() , '\n'
+            print new_post.get_user() , '\n'
+            print new_post.get_category() , '\n'
+            print new_post.get_time()
     return render_to_response( 'new_post/create_post.html')
