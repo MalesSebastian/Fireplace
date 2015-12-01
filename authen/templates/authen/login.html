@@ -7,6 +7,7 @@
 		<script type="text/javascript" src="js/script.js"></script>
 	</head>
 	<body>
+	<div class="form">
 		<form method="POST" action="{% url 'login' %}">
 			{% csrf_token %} 
 			<!-- {{form.as_ul}} -->
@@ -30,5 +31,6 @@
 				<input type="submit" name="createAcount" value="Create Acount" class="createAcount" />
 			</div>
 		</a>
+	</div>
 	</body>
 </html>
