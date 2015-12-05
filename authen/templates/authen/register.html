@@ -38,18 +38,16 @@
 	<body>
 		<form method="post" action="">
 		{% csrf_token %} 
-		{{form.as_ul}}
-			<!--  <div class="inputText"> 
+			  <div class="inputText"> 
 				<input type="text" name="username" placeholder="Username" required />
 				<br><br>
 				<input type="email" name="email" placeholder="Email" required />
 				<br><br>
-				<input type="password" name="pass1" id="pass1" placeholder="Password" required />
+				<input type="password" name="password" id="pass1" placeholder="Password" required />
 				<br><br>
-				<input type="password" name="pass2" id="pass2" onkeyup="checkPass(); return false;" placeholder="Confirm Password" required />
+				<input type="password" name="password2" id="pass2" onkeyup="checkPass(); return false;" placeholder="Confirm Password" required />
 				<br><br>
 				<span id="confirmMessage" class="confirmMessage"></span>
-			-->
 		
 			<div class="send">
 				<input type="submit" name="register" value="Register" class="register" />

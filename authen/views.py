@@ -1,12 +1,12 @@
 from django.shortcuts import render
 from django.contrib.auth.models import User
-from forms import UserForm
 from django.contrib.auth import login
 from django.http import HttpResponseRedirect
 from django.http import HttpResponse
 from django.contrib.auth import authenticate
 from django.template import loader
 from models import Account
+
 
 def app_login(request):
     if request.method == 'GET':
@@ -25,26 +25,27 @@ def app_login(request):
             print "Invalid data"
     return render(request, 'authen/login.html')
 
+
 def index2(request):
     template = loader.get_template('authen/index.html')
-    return  HttpResponse(template.render())
+    return HttpResponse(template.render())
+
 
 def index(request):
     template = loader.get_template('authen/index.html')
-    return  HttpResponse(template.render())
+    return HttpResponse(template.render())
 
 
 def register(request):
-     if request.method == "POST":
-        form = UserForm(request.POST)
-        if form.is_valid():
-            new_user = User.objects.create_user(**form.cleaned_data)
-            acc = Account(new_user)
-            acc.save()
-            login(new_user)
-            return HttpResponseRedirect('/index')
-     else:
-        form = UserForm()
-
-     return render(request, 'authen/register.html', {'form': form})
+    if request.method == "POST":
+        username = request.POST.get('username')
+        email = request.POST.get('email')
+        password = request.POST.get('password')
+        new_user = User.objects.create_user(username, email, password)
+        new_user.save()
+        acc = Account(new_user)
+        acc.save()
+        login(new_user)
+        return HttpResponseRedirect('/index')
+    return render(request, 'authen/register.html')
 
