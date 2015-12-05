@@ -6,7 +6,7 @@ from django.http import HttpResponseRedirect
 from django.http import HttpResponse
 from django.contrib.auth import authenticate
 from django.template import loader
-from models import Account, Badge
+from models import Account
 
 def app_login(request):
     if request.method == 'GET':
@@ -32,6 +32,7 @@ def index2(request):
 def index(request):
     template = loader.get_template('authen/index.html')
     return  HttpResponse(template.render())
+
 
 def register(request):
      if request.method == "POST":

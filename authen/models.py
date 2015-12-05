@@ -21,9 +21,12 @@ class Badge(models.Model):
         account = models.ForeignKey(Account, related_name="badges")
         name = models.TextField(default='')
 
-        def __init__(self, account , name):
+        def __init__(self, account, name):
             self.account = account
             self.name = name
+
+        def get_name(self):
+            return self.name
 
 
 
