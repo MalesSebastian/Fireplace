@@ -5,7 +5,7 @@
 </head>
 <body>
 	
-	<form action="" method="GET">
+	<form action="{% url 'submit' %}" method="POST">
 		{% csrf_token %} 
 		<input type="text" name="title" style="height: 25px; width: 350px"> <br>
 		<br>

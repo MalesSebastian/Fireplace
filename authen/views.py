@@ -6,6 +6,7 @@ from django.http import HttpResponseRedirect
 from django.http import HttpResponse
 from django.contrib.auth import authenticate
 from django.template import loader
+from models import Account, Badge
 
 def app_login(request):
     if request.method == 'GET':
@@ -37,8 +38,9 @@ def register(request):
         form = UserForm(request.POST)
         if form.is_valid():
             new_user = User.objects.create_user(**form.cleaned_data)
+            acc = Account(new_user)
+            acc.save()
             login(new_user)
-            # redirect, or however you want to get to the main view
             return HttpResponseRedirect('/index')
      else:
         form = UserForm()

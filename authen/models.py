@@ -1,26 +1,30 @@
-""""
 from django.db import models
 from django.contrib.auth.models import User
 
 
-class UserModel(User):
-    points = models.IntegerField(default=0)
-    badges = models.
+class Account(models.Model):
+        user = models.OneToOneField(User, primary_key=True)
+        points = models.IntegerField(default=1)
+        level = models.IntegerField(default=1)
 
-    def get_point(self):
-        return self.points
+        def __init__(self, user):
+            self.user = user
 
-    def get_badges(self):
-        return self.badges
+        def get_points(self):
+            return self.points
 
-    def set_badges(self, badge):
-
-
-    def set_point(self, point):
-        self.points = self.points + point
+        def get_level(self):
+            return self.level
 
 
+class Badge(models.Model):
+        account = models.ForeignKey(Account, related_name="badges")
+        name = models.TextField(default='')
 
-            Work in progress 
-"""
+        def __init__(self, account , name):
+            self.account = account
+            self.name = name
+
+
+
 
