@@ -16,11 +16,10 @@ input, textarea, .create_acount {
 }
 
 
-.inputText input {
-	height: 40px;
-}
 
-.inputText input, .inputText textarea {
+
+.inputText {
+	height: 40px;
 	width: 27%;
 	background: #06141e;
 	border: 3px solid #505861;
@@ -43,7 +42,7 @@ input, textarea, .create_acount {
 	color: #fff;
 }
 
-.createAcount input {
+.createAcount {
 	width: 27%;
 	height: 40px;
 	background: #0b1c2a;
@@ -53,7 +52,7 @@ input, textarea, .create_acount {
 	cursor: pointer;
 }
 
-.createAcount input:hover {;
+.createAcount input:hover {
 	border: 3px solid #535d67;
 	color: #00aeff;
 }
