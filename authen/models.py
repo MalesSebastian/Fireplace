@@ -10,6 +10,12 @@ class Account(models.Model):
         def __init__(self, user):
             self.user = user
 
+        def set_points(self, points):
+            self.points = points
+
+        def set_level(self, level):
+            self.level = level
+
         def get_points(self):
             return self.points
 
