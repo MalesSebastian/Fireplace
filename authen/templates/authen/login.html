@@ -1,27 +1,25 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		{% load staticfiles %}
+	{% load staticfiles %}
 		<title>Acasa</title>
-		<link rel="stylesheet" type="text/css" href={% static 'authen/style.css' %} />
+		<link rel="stylesheet" type="text/css" href="{% static 'authen/style.css' %}" />
 		<script type="text/javascript" src="js/script.js"></script>
 	</head>
 	<body>
-	<div class="form">
-		<form method="POST" action="{% url 'login' %}">
-			{% csrf_token %} 
-			<!-- {{form.as_ul}} -->
+		<form method="post" action="">
+			{% csrf_token %}
 			<div class="inputText">
 				<input type="text" name="username" placeholder="Username" required />
 				<br><br>
 				<input type="password" name="password" placeholder="Password" required />
 				<br><br>
 			</div>
-			
+
 			<div class="send">
 				<input type="submit" name="login" value="Log In" class="login" />
 			</div>
-
+		
 		</form>
 
 		<br>
@@ -31,6 +29,5 @@
 				<input type="submit" name="createAcount" value="Create Acount" class="createAcount" />
 			</div>
 		</a>
-	</div>
 	</body>
 </html>
