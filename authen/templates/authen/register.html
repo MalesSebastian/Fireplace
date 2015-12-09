@@ -3,7 +3,11 @@
 	<head>
 	{% load staticfiles %}
 		<title>Acasa</title>
+<<<<<<< HEAD
 		<link rel="stylesheet" type="text/css" href="{% static 'authen/style.css' %}" />
+=======
+		<link rel="stylesheet" type="text/css" href="{ % static 'authen/style.css' % }" />
+>>>>>>> b835b6f4ed789eb5aacce7536d1cb9e01f8fb2ac
 		<script type="text/javascript">
 			function checkPass()
 			{
@@ -15,12 +19,21 @@
 			    //Set the colors we will be using ...
 			    var goodColor = "#66cc66";
 			    var badColor = "#ff6666";
+<<<<<<< HEAD
 			    //Compare the values in the password field
 			    //and the confirmation field
 			    if(pass1.value == pass2.value){
 			        //The passwords match.
 			        //Set the color to the good color and inform
 			        //the user that they have entered the correct password
+=======
+			    //Compare the values in the password field 
+			    //and the confirmation field
+			    if(pass1.value == pass2.value){
+			        //The passwords match. 
+			        //Set the color to the good color and inform
+			        //the user that they have entered the correct password 
+>>>>>>> b835b6f4ed789eb5aacce7536d1cb9e01f8fb2ac
 			        pass2.style.backgroundColor = goodColor;
 			        message.style.color = goodColor;
 			        message.innerHTML = "Passwords Match!"
@@ -53,7 +66,14 @@
 			<div class="send">
 				<input type="submit" name="register" value="Register" class="register" />
 			</div>
+<<<<<<< HEAD
 
 		</form>
 	</body>
 </html>
+=======
+		
+		</form>
+	</body>
+</html> 
+>>>>>>> b835b6f4ed789eb5aacce7536d1cb9e01f8fb2ac
