@@ -7,9 +7,9 @@ class Account(models.Model):
         points = models.IntegerField(default=1)
         level = models.IntegerField(default=1)
 
-        def create(self, user):
-            self.user = user
-            self.save()
+#        def create(self, user):
+#            self.user = user
+#            self.save()
 
         def set_points(self, points):
             self.points = points

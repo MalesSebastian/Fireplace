@@ -38,8 +38,8 @@ def register(request):
         password = request.POST.get('password')
         new_user = User.objects.create_user(username, email, password)
         new_user.save()
-        Account.create(new_user)
-        login(request, new_user)
+        Account.objects.create(user=new_user)
+#        login(request, new_user)
         return HttpResponseRedirect('/index')
     return render(request, 'authen/register.html')
 
