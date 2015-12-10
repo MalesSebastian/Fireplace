@@ -26,11 +26,6 @@ def app_login(request):
     return render(request, 'authen/login.html')
 
 
-def index2(request):
-    template = loader.get_template('authen/index.html')
-    return HttpResponse(template.render())
-
-
 def index(request):
     template = loader.get_template('authen/index.html')
     return HttpResponse(template.render())
@@ -43,9 +38,8 @@ def register(request):
         password = request.POST.get('password')
         new_user = User.objects.create_user(username, email, password)
         new_user.save()
-        acc = Account(new_user)
-        acc.save()
-        login(new_user)
+        Account.create(new_user)
+        login(request, new_user)
         return HttpResponseRedirect('/index')
     return render(request, 'authen/register.html')
 

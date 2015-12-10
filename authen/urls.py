@@ -1,11 +1,8 @@
-from django.conf.urls import include, url
-from django.contrib import admin
+from django.conf.urls import url
 from . import views
-from authen.views import *
 
 urlpatterns = [
     url(r'^login/', views.app_login, name='login'),
     url(r'^register/', views.register, name='register'),
-    url(r'^index/' , views.index, name='index'),
-    url(r'^index/' , views.index2, name='index2')
+    url(r'^index/', views.index, name='index'),
 ]

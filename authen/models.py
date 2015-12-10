@@ -7,8 +7,9 @@ class Account(models.Model):
         points = models.IntegerField(default=1)
         level = models.IntegerField(default=1)
 
-        def __init__(self, user):
+        def create(self, user):
             self.user = user
+            self.save()
 
         def set_points(self, points):
             self.points = points
@@ -27,9 +28,10 @@ class Badge(models.Model):
         account = models.ForeignKey(Account, related_name="badges")
         name = models.TextField(default='')
 
-        def __init__(self, account, name):
+        def create(self, account, name):
             self.account = account
             self.name = name
+            self.save()
 
         def get_name(self):
             return self.name
