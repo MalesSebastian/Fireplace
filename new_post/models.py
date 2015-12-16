@@ -45,4 +45,5 @@ class Post(models.Model):
     def get_time(self):
         return self.time
 
-
+    class Meta:
+        db_table = 'posts'
