@@ -9,7 +9,6 @@ def submit(request):
         category = request.POST.get('category')
         user_ses = request.user
         new_post = Post(post_title, post_text, user_ses, category)
-        print new_post.get_title()
         new_post.save()
         return render(request, 'new_post/create_post.html')
     return render(request, 'new_post/create_post.html')

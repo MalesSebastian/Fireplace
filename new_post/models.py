@@ -7,7 +7,7 @@ class Post(models.Model):
     title = models.CharField(max_length=100)
     post_text = models.TextField()
     time = models.DateTimeField(default= timezone.now())
-    up_vote = models.IntegerField(default= 0)
+    up_vote = models.IntegerField(default=0)
     category = models.TextField(default='')
     submitter = models.TextField(default='')
 
@@ -44,6 +44,3 @@ class Post(models.Model):
 
     def get_time(self):
         return self.time
-
-    class Meta:
-        db_table = 'posts'

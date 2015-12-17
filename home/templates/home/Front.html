@@ -8,10 +8,13 @@
 		<a href="/submit">Submit a new post</a>
 		{% for post in posts %}
 		<div>
-			<h1>{{post.get_title}}</h1>
+			<h1 value="{{post.title}}">{{post.title}}</h1>
 			<br>
 			<br>
-			<p> {{post.get_text}} </p>
+			<p value="{{post.post_text}}"> {{post.post_text}} </p>
+			<br>
+			<br>
+			<p value="{{post.time}}"> {{post.time}} </p>
 			<br>
 			<br>
 			<button type="button"> Upvote</button>
