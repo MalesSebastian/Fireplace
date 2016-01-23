@@ -20,5 +20,5 @@ urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
     url(r'^', include('authen.urls')),
     url(r'^', include('new_post.urls')),
-    url(r'^$', 'home.views.index'),
+    url(r'^', include('home.urls')),
 ]

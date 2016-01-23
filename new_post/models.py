@@ -1,12 +1,15 @@
 from django.db import models
 from django.utils import timezone
+import uuid
+from django.core.urlresolvers import reverse
 
 
 class Post(models.Model):
 
     title = models.CharField(max_length=100)
     post_text = models.TextField()
-    time = models.DateTimeField(default= timezone.now())
+    #slug = models.SlugField(default=uuid.uuid1, unique=True)
+    time = models.DateField(auto_now_add=True, editable=False)
     up_vote = models.IntegerField(default=0)
     category = models.TextField(default='')
     submitter = models.TextField(default='')
@@ -17,6 +20,9 @@ class Post(models.Model):
         self.time = timezone.now()
         self.submitter = user
         self.category = category
+
+  #  def get_absolute_url(self):
+  #s      return reverse('post', args=[self.slug])
 
     def set_title(self, title):
         self.title = title
@@ -44,3 +50,7 @@ class Post(models.Model):
 
     def get_time(self):
         return self.time
+
+    class Meta:
+        get_latest_by = 'time'
+
