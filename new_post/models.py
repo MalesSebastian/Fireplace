@@ -1,6 +1,7 @@
 from django.db import models
 import uuid
 from django.core.urlresolvers import reverse
+from django.contrib.auth.models import User
 
 
 class Post(models.Model):
@@ -11,7 +12,7 @@ class Post(models.Model):
     time = models.DateField(auto_now_add=True, editable=False)
     up_vote = models.IntegerField(default=0)
     category = models.TextField(default='')
-    submitter = models.TextField(default='')
+    submitter = models.ForeignKey(User, related_name="posts")
 
     def __unicode__(self):
         return self.title

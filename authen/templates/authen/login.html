@@ -2,33 +2,37 @@
 <html>
 	<head>
 	{% load staticfiles %}
-		<title>Acasa</title>
-		<link rel="stylesheet" type="text/css" href="{% static 'authen/style.css' %}"/>
-		<script type="text/javascript" src="js/script.js"></script>
+	<title>Login - Fireplace</title>
+	<link type="text/css" rel="stylesheet" href="{% static 'materialize/bin/materialize.css' %}"  media="screen,projection"/>
+	<link rel="stylesheet" type="text/css" href="{% static 'authen/style.css' %}"/>
 	</head>
 	<body>
-		<form method="post" action="">
-			{% csrf_token %}
-			<div class="inputText">
-				<input type="text" name="username" placeholder="Username" required />
-				<br><br>
-				<input type="password" name="password" placeholder="Password" required />
-				<br><br>
-			</div>
-
-			<div class="send">
-				<input type="submit" name="login" value="Log In" class="login" />
-			</div>
-		</form>
-
-		<br>
-
-		<a href="register.html">
-			<div class="createAcount">
-				<input type="submit" name="createAcount" value="Create Acount" class="createAcount" />
-			</div>
-		</a>
+	   	{% block footer %}
+        	<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+        	<script type="text/javascript" src="{% static 'materialize/bin/materialize.js' %}"></script>
+    	{% endblock %}
+	<div class="formk">
+		<div class="row">
+		    <form class="col s12" method="post" action="">
+		    {% csrf_token %}
+		      <div class="row">
+		        <div class="input-field col s12">
+		          <input id="first_name" type="text" class="validate" name="username" required />
+		          <label for="first_name" data-error="wrong" data-success="right">Username</label>
+		        </div>
+		      </div>
+		      <div class="row">
+		        <div class="input-field col s12">
+		          <input id="password" type="password" class="validate" name="password" required />
+		          <label for="password" data-error="wrong" data-success="right">Password</label>
+		        </div>
+		      </div>
+		      <div class="but">
+		       <button class="btn waves-effect waves-light" type="submit" name="Login">Login
+  			  </button>
+  			  </div>
+		    </form>
+		</div>
+	</div>
 	</body>
-
 </html>
-
