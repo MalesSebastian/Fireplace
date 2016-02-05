@@ -1,9 +1,16 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title></title>
+	{% load staticfiles %}
+	<title>Hot - Fireplace</title>
+	<link type="text/css" rel="stylesheet" href="{% static 'materialize/bin/materialize.css' %}"  media="screen,projection"/>
+	<link rel="stylesheet" type="text/css" href="{% static 'new_post/style.css' %}"/>
 </head>
 <body>
+    {% block footer %}
+        <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+        <script type="text/javascript" src="{% static 'materialize/bin/materialize.js' %}"></script>
+    {% endblock %}
 		<h1>FRONTPAGE</h1>
 		<a href="/submit">Submit a new post</a>
 		{% for post in posts %}
