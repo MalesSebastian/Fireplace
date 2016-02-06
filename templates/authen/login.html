@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	{% load staticfiles %}
+	<title>Login - Fireplace</title>
+	<link type="text/css" rel="stylesheet" href="{% static 'authen/css/foundation.css' %}"/>
+	<link rel="stylesheet" type="text/css" href="{% static 'authen/style.css' %}"/>
+	</head>
+	<body>
+	   	{% block footer %}
+        	<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+        	<script type="text/javascript" src="{% static 'authen/js/foundation.js' %}"></script>
+    	{% endblock %}
+		<div class="row">
+		  <div class="medium-6 medium-centered large-4 large-centered columns" >
+		    <form action="" method="POST">
+					{% csrf_token %}
+		      <div class="row column log-in-form">
+		        <label>Username
+		          <input type="text" placeholder="Username" name="username" required />
+		        </label>
+		        <label>Password
+		          <input type="password" placeholder="Password" name="password" required />
+		        </label>
+		        <input type="submit" class="button expanded" name="Login" style="background-color:#5f4021;">
+		        <p class="text-center"><a style="color: #5f4021" href="#">Forgot your password?</a></p>
+		      </div>
+		    </form>
+  		</div>
+		</div>
+</body>
+</html>
